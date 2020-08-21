@@ -1,0 +1,7 @@
+{
+  "name": "bread-maker-friend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
