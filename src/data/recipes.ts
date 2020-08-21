@@ -2,7 +2,9 @@ export interface Recipe {
     title: string;
     description: string;
     id: number;
-    data: object;
+    data: {
+        percentages: any;
+    };
 }
 
 const recipes: Recipe[] = [

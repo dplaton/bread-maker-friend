@@ -5,6 +5,11 @@ import {
     IonToolbar,
     IonButtons,
     IonBackButton,
+    IonContent,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
     useIonViewWillEnter,
 } from '@ionic/react';
 import {RouteComponentProps} from 'react-router';
@@ -34,6 +39,58 @@ const ViewRecipe: React.FC<ViewRecipeProps> = ({match}) => {
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
+            <IonContent fullscreen>
+                {recipe && (
+                    <>
+                        <IonItem>
+                            <IonLabel className="ion-text-wrap">
+                                <h2>{recipe.title}</h2>
+                            </IonLabel>
+                        </IonItem>
+                        <div className="ion-padding">
+                            <IonList>
+                                <IonListHeader>
+                                    <IonLabel>
+                                        <h3>Baker's percentages:</h3>
+                                    </IonLabel>
+                                </IonListHeader>
+                                <IonItem>
+                                    <IonLabel>Flour:</IonLabel>
+                                    <span>
+                                        {`${
+                                            recipe.data.percentages.flour * 100
+                                        }%`}
+                                    </span>
+                                </IonItem>
+                                <IonItem>
+                                    <IonLabel>Liquid:</IonLabel>
+                                    <span>
+                                        {`${
+                                            recipe.data.percentages.liquid * 100
+                                        }%`}
+                                    </span>
+                                </IonItem>
+                                <IonItem>
+                                    <IonLabel>Salt:</IonLabel>
+                                    <span>
+                                        {`${
+                                            recipe.data.percentages.salt * 100
+                                        }%`}
+                                    </span>
+                                </IonItem>
+                                <IonItem>
+                                    <IonLabel>Yeast:</IonLabel>
+                                    <span>
+                                        {`${
+                                            recipe.data.percentages.yeast * 100
+                                        }%`}
+                                    </span>
+                                </IonItem>
+                            </IonList>
+                        </div>
+                    </>
+                )}
+            </IonContent>
         </IonPage>
     );
 };
